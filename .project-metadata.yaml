@@ -1,0 +1,27 @@
+name: Machine Learning on Cloudera Data Platform
+description: Exercise Guide for Machine Learning on Cloudera Data Platform
+author: Cloudera Inc.
+specification_version: 1.0
+prototype_version: 2.0
+date: "2022-07-31"
+
+runtimes:
+  - editor: Workbench
+    kernel: Python 3.9
+    edition: Standard
+    addons: ['Spark 3.2.0 - CDE 1.15 - HOTFIX-2']
+
+tasks:
+  - type: run_session
+    name: Install Dependencies
+    script: cml/install_dependencies.py
+    kernel: python3
+    cpu: 1
+    memory: 2
+
+  - type: run_session
+    name: Setup Environment
+    script: cml/setup-env.py
+    kernel: python3
+    cpu: 1
+    memory: 2
