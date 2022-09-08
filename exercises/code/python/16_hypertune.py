@@ -38,7 +38,7 @@ spark = conn.get_spark_session()
 # **Important:**  Run the `15_classify.py` script before loading the data.
 
 # Read the modeling data from HDFS:
-rides = spark.read.parquet(S3_ROOT + "/data/modeling_data")
+rides = spark.read.parquet(S3_HOME + "/data/modeling_data")
 rides.show(5)
 
 

@@ -7,8 +7,8 @@ setup_environment() {
 
 	export HADOOP_ROOT_LOGGER="ERROR"
 	
-	export S3_ROOT=`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hadoop/conf/hive-site.xml | head -1`
-	export HIVE_EXT="`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hadoop/conf/hive-site.xml | head -1`/warehouse/tablespace/external/hive"
+	export S3_ROOT=`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hive/conf/hive-site.xml | head -1`
+	export HIVE_EXT="`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hive/conf/hive-site.xml | head -1`/warehouse/tablespace/external/hive"
 	export PRINCIPAL=`klist | sed -nr 's/^Default principal: (.*)\/.+$/\1/p' | head -1`
 	export DATALAKE=`sed -nr 's/^.*https:\/\/(.*)-idbroker.*$/\1/p' /etc/hadoop/conf/core-site.xml | head -1`
 
