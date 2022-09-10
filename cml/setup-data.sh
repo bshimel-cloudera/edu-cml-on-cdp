@@ -11,6 +11,7 @@ setup_environment() {
 	export HIVE_EXT="`sed -nr 's/.*(s3a:.*)\/warehouse.*$/\1/p' /etc/hive/conf/hive-site.xml | head -1`/warehouse/tablespace/external/hive"
 	export PRINCIPAL=`klist | sed -nr 's/^Default principal: (.*)\/.+$/\1/p' | head -1`
 	export DATALAKE=`sed -nr 's/^.*https:\/\/(.*)-idbroker.*$/\1/p' /etc/hadoop/conf/core-site.xml | head -1`
+	export S3_DATA=https://cml-training.s3.amazonaws.com
 
 	echo "S3_ROOT =  $S3_ROOT"
 	echo "HIVE_EXT = $HIVE_EXT"
@@ -21,21 +22,22 @@ setup_environment() {
 download_duocar_data_from_s3() {
 	# Download the zipped DuoCar data from S3 and unzip
 	cd ~
-	hdfs dfs -get $HIVE_EXT/S3/duocar.zip .
+	curl -s $S3_DATA/duocar.zip --output ./duocar.zip
 	rm -r -f duocar
 	mkdir duocar
 	unzip duocar.zip -d ~/duocar/
 
     # Download the Earcloud data from S3 and unzip
 	cd ~
-	hdfs dfs -get $HIVE_EXT/S3/earcloud.zip .
+	curl -s $S3_DATA/earcloud.zip --output ./earcloud.zip
 	rm -r -f earcloud
 	unzip earcloud.zip
 
 	# Copy demographics data
 	hdfs dfs -rm -r -skipTrash $HIVE_EXT/data
 	hdfs dfs -mkdir -p $HIVE_EXT/data
-	hdfs dfs -cp $HIVE_EXT/S3/demographics.txt $HIVE_EXT/data
+	curl -s $S3_DATA/demographics.txt --output ./demographics.txt
+	hdfs dfs -put ./demographics.txt $HIVE_EXT/data
 }
 
 copy_duocar_data_to_hdfs() {
