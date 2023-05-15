@@ -1,6 +1,6 @@
-# # An Introduction to Cloudera Data Science Workbench (CDSW)
+# # An Introduction to the CML Native Workbench
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -49,7 +49,7 @@ expit?
 # Print the current working directory:
 !pwd
 
-# **Note:** All CDSW users have the username `cdsw`.
+# **Note:** All CML Native Workbench users have the username `cdsw`.
 
 # List the contents of the current directory:
 !ls -l
@@ -189,7 +189,7 @@ Image("exercises/code/resources/spark.png")
 
 # ## Exercises
 
-# (1) Experiment with the CDSW command line.
+# (1) Experiment with the CML Native Workbench command line.
 
 # * Type a partial command and then press the TAB key.  Use the UP and DOWN
 # ARROW keys to navigate the tab completion options.  Press the RETURN key to
@@ -201,7 +201,7 @@ Image("exercises/code/resources/spark.png")
 
 # * Use SHIFT-RETURN to enter a multi-line command.
 
-# (2) Experiment with the CDSW file editor.
+# (2) Experiment with the CML Native Workbench file editor.
 
 # * Create a new file called `logit.py`.
 
