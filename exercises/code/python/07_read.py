@@ -1,6 +1,6 @@
 # # Reading and Writing DataFrames
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -151,7 +151,7 @@ weblogs = spark.read.text(S3_ROOT + "/duocar/earcloud/apache_logs/")
 weblogs.printSchema()
 weblogs.head(5)
 
-# **Note:** The default filesystem in Hadoop (and by extension CDSW) is HDFS.
+# **Note:** The default filesystem in Hadoop (and by extension CML Native Workbench) is HDFS.
 # The read statement above is a shortcut for
 #```python
 #weblogs = spark.read.text("hdfs:///duocar/earcloud/apache_logs/")
@@ -242,20 +242,32 @@ demographics.show(5)
 # Import the pandas package:
 import pandas as pd
 
-# # Use the pandas `read_csv` method to read a local tab-delimited file:
-# demographics_pdf = pd.read_csv(S3_ROOT + "/data/demographics.txt", sep="\t")
+# Use the pandas `read_csv` method to read a local tab-delimited file:
 
-# # Access the pandas `dtypes` attribute to the view the data types:
-# demographics_pdf.dtypes
+# `demographics_pdf = pd.read_csv(S3_ROOT + "/data/demographics.txt", sep="\t")`
 
-# # Use the pandas `head` method to view the data:
-# demographics_pdf.head()
+# Access the pandas `dtypes` attribute to the view the data types:
 
-# # Use the `createDataFrame` method of the `SparkSession` class to create a Spark
-# # DataFrame from a pandas DataFrame:
+# `demographics_pdf.dtypes`
+
+# Use the pandas `head` method to view the data:
+
+# `demographics_pdf.head()`
+
+# Use the `createDataFrame` method of the `SparkSession` class to create a Spark
+# DataFrame from a pandas DataFrame:
+
+# ```
 # demographics = spark.createDataFrame(demographics_pdf)
 # demographics.printSchema()
 # demographics.show(5)
+# ```
+
+# Use the `toPandas` method to read a Spark DataFrame into a pandas DataFrame:
+riders_pdf = riders.toPandas()
+riders_pdf.dtypes
+riders_pdf.head()
+
 
 # Use the `toPandas` method to read a Spark DataFrame into a pandas DataFrame:
 riders_pdf = riders.toPandas()

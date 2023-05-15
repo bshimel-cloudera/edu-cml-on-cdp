@@ -1,6 +1,6 @@
-# # Processing Text and Fitting and Evaluating Topic Models
+# # Processing Text: Fitting and Evaluating Topic Models
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -134,7 +134,7 @@ vectorized.select("words", "word_count_vector").head(5)
 # [SparseVector](http://spark.apache.org/docs/latest/api/python/pyspark.ml.html#pyspark.ml.linalg.SparseVector).
 
 
-# ## Specify and fit a topic model using latent Dirichlet allocation (LDA)
+# ## Fit a topic model using latent Dirichlet allocation (LDA)
 
 # Use the `LDA` class to specify an LDA model:
 from pyspark.ml.clustering import LDA

@@ -1,6 +1,6 @@
-# # Running a Spark Application from CDSW
+# # Running a Spark Application from CML Native Workbench
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -16,7 +16,7 @@
 # * Stop a Spark application 
 
 
-# ## Running a Spark Application from CDSW
+# ## Running a Spark Application from CML Native Workbench
 
 # * A Spark *application* runs on the Java Virtual Machine (JVM)
 
@@ -26,12 +26,12 @@
 
 # * An application normally runs on the Hadoop cluster via YARN
 #   * Used to process, analyze, and model large data sets
-#   * The driver runs in the CDSW session engine
+#   * The driver runs in the CML Native Workbench session engine
 #   * The executors run in the worker nodes
 
-# * An application can run locally within the CDSW session engine
+# * An application can run locally within the CML Native Workbench session engine
 #   * Used to develop and test code on small data sets
-#   * The driver runs in the CDSW session engine
+#   * The driver runs in the CML Native Workbench session engine
 #   * The executors run as threads in the context of the driver process
 
 # * Start an application by creating an instance of the `SparkSession` class
@@ -59,9 +59,9 @@ os.environ["HADOOP_ROOT_LOGGER"] = "ERROR"
 
 # Call the optional `master` method to specify how the application runs:
 # * Pass `yarn` to run on the Hadoop cluster via YARN
-# * Pass `local` to run in the CDSW session engine with one thread
-# * Pass `local[N]` to run in the CDSW session engine with $N$ threads
-# * Pass `local[*]` to run in the CDSW session engine with all available
+# * Pass `local` to run in the CML Native Workbench session engine with one thread
+# * Pass `local[N]` to run in the CML Native Workbench session engine with $N$ threads
+# * Pass `local[*]` to run in the CML Native Workbench session engine with all available
 # threads
 
 # Call the optional `appName` method to specify a name for the application.
@@ -85,7 +85,7 @@ spark.version
 # from HDFS into a DataFrame:
 rides = spark.read.csv(S3_ROOT + "/duocar/raw/rides/", sep=",", header=True, inferSchema=True)
 
-# **Note:** HDFS is the default file system for Spark in CDSW.
+# **Note:** HDFS is the default file system for Spark in CML Native Workbench.
 
 
 # ## Examining the schema of a DataFrame
@@ -131,7 +131,7 @@ rides.take(5)
 # Call the `stop` method to stop the application:
 spark.stop()
 
-# **Note:** The Spark application will also stop when you stop the CDSW session
+# **Note:** The Spark application will also stop when you stop the CML Native Workbench session
 # engine.
 
 

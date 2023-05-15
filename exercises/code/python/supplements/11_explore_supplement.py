@@ -1,6 +1,6 @@
 # # Exploring and Visualizing DataFrames - Supplement
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -110,7 +110,7 @@ rides_pdf["rider_gender"] = rides_pdf["rider_gender"].fillna("missing")
 # Specify the desired order of the categories:
 order = ["Car", "Noir", "Grand", "Elite"]
 
-# In CDSW, it is best to encapsulated multi-layered plots within functions:
+# In CML, it is best to encapsulated multi-layered plots within functions:
 def tmp_plot():
   g = sns.FacetGrid(data=rides_pdf, row="rider_gender", col="rider_student", margin_titles=True)
   g = g.map(sns.countplot, "service", order=order)
@@ -128,7 +128,7 @@ tmp_plot()
 # variables as a function of two categorical variables.  For example, let us
 # explore the relationship of ride distance and ride duration as a function of
 # rider gender and student status:
-def tmp_plot():  # Wrap plot build into function for CDSW
+def tmp_plot():  # Wrap plot build into function for CML
   g = sns.FacetGrid(data=rides_pdf, row="rider_gender", col="rider_student", margin_titles=True)
   g = g.map(plt.scatter, "distance", "duration")
 tmp_plot()

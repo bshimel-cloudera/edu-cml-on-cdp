@@ -1,13 +1,13 @@
-# # Batch Scoring using CDSW Jobs
+# # Batch Scoring using CML Jobs
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
 
 # ## Introduction
 
-# Run this script as a CDSW Job to demonstrate batch scoring.
+# Run this script as a CML Job to demonstrate batch scoring.
 
 # **Important:** Run `22_deploy_udf.py` before running this script.
 
@@ -86,4 +86,4 @@ spark.stop()
 
 # ## References
 
-# [CDSW Documentation - Jobs](https://docs.cloudera.com/documentation/data-science-workbench/latest/topics/cdsw_jobs_pipelines.html)
+# [CML Documentation - Jobs](https://docs.cloudera.com/machine-learning/cloud/jobs-pipelines/topics/ml-creating-a-job-c.html)

@@ -1,13 +1,13 @@
-# # Online Scoring using CDSW Models
+# # Online Scoring using CML Models
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
 
 # ## Introduction
 
-# Run this script to demonstrate online scoring using a CDSW Model.
+# Run this script to demonstrate online scoring using a CML Model.
 
 # **Important:** Do the following before running this script:
 # * Run `22_deploy_udf.py` to create `ir_model.pickle`
@@ -29,7 +29,7 @@ data = {"accessKey": access_key}
 headers = {'Content-Type': 'application/json'}
 
 # **Note:** These parameters are available in the **Overview** tab for the
-# deployed model in CDSW.
+# deployed model in CML.
 
 
 # ## Get online predictions
@@ -40,7 +40,7 @@ for distance in [100, 1000, 10000, 100000, None]:
     # This will be passed to the predict function specified in the model build.
     data["request"] = {"distance": distance}
   
-    # Send a POST request to the CDSW Models API.
+    # Send a POST request to the CML Models API.
     # Convert the dictionary to a JSON string.
     r = requests.post(url, data=json.dumps(data), headers=headers)
 

@@ -1,6 +1,6 @@
-# # Running a Spark Application from CDSW - Supplement
+# # Running a Spark Application from CML - Supplement
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -32,8 +32,6 @@ rides = spark.read.csv(S3_ROOT + "/duocar/raw/rides/", header=True, inferSchema=
 # distributed dataset* (RDD) API.  Creating a `SparkSession` object also
 # creates an underlying `SparkContext` object:
 spark.sparkContext
-
-# **Note:** The Spark UI link does not work in CDSW.
 
 # Use the `parallelize` method of the `SparkContext` instance to create an RDD:
 rdd = spark.sparkContext.parallelize([3.1416, 2.7183, 1.6180, 0.5772])

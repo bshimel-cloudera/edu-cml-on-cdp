@@ -1,6 +1,6 @@
 # # Reading and Writing DataFrames - Supplement
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -48,7 +48,7 @@ scientists_enhanced.show()
 scientists_enhanced.write.jdbc(url=url, table="scientists_enhanced", mode="overwrite", properties=properties)
 
 # **Important:** This code will fail when running Spark via YARN since the
-# worker nodes can not access the SQLite database hosted on the CDSW nodes.
+# worker nodes can not access the SQLite database hosted on the CML nodes.
 
 
 # ## Generating a DataFrame

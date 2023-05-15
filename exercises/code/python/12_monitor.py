@@ -1,6 +1,6 @@
 # # Monitoring, Tuning, and Configuring Spark Applications
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -22,7 +22,7 @@ import os
 os.environ["S3_HOME"] = S3_HOME
 os.environ["HADOOP_ROOT_LOGGER"] = "ERROR"
 
-# A link to the Spark UI is available at the top of the CDSW console pane.
+# A link to the Spark UI is available at the top of the CML Native Workbench console pane.
 
 # **Important:** If the Spark UI link brings up a blank page, then you can
 # access the Spark UI via the Spark History Server (SHS) or directly at

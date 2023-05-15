@@ -1,6 +1,6 @@
 # # Applying a scikit-learn Model to a Spark DataFrame
 
-# Copyright © 2010–2020 Cloudera. All rights reserved.
+# Copyright © 2010–2022 Cloudera. All rights reserved.
 # Not to be reproduced or shared without prior written 
 # consent from Cloudera.
 
@@ -115,7 +115,7 @@ def plot_model():
   plt.ylabel("Duration (s)")
 plot_model()
 
-# ### Save the model for later use in CDSW
+# ### Save the model for later use in CML Native Workbench
 
 # Use the pickle package to serialize the model on disk:
 import pickle
