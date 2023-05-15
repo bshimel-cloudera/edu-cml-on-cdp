@@ -11,3 +11,7 @@ wordcloud==1.8.2.2
 # Required for 22_deploy_udf.py
 sklearn==0.0
 pyarrow==9.0.0
+
+# Required to keep seaborn 0.11.2 from breaking
+pandas<2
+altair<5
