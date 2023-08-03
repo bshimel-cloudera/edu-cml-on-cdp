@@ -1,9 +1,9 @@
-name: Machine Learning on Cloudera Data Platform
-description: Exercise Guide for Machine Learning on Cloudera Data Platform
+name: Predicting with Cloudera Machine Learning
+description: Exercise Guide for Predicting with Cloudera Machine Learning
 author: Cloudera Inc.
 specification_version: 1.0
 prototype_version: 2.0
-date: "2022-07-31"
+date: "2023-07-31"
 
 runtimes:
   - editor: Workbench
