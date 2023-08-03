@@ -174,9 +174,6 @@ spark.conf.get("spark.driver.memory")
 
 # We can view other settings under the **Environment** tab of the Spark UI.
 
-# You can set configuration properties in the `spark-defaults.conf` file:
-!cat spark-defaults.conf
-
 # Stop the SparkSession (and the Spark application):
 spark.stop()
 

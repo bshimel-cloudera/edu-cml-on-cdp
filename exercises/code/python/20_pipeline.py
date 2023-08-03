@@ -150,9 +150,6 @@ validator_model.bestModel._java_obj.getMaxDepth()
 validator_model.bestModel.getNumTrees
 validator_model.bestModel._java_obj.getSubsamplingRate()
 
-# **Note:** We have to access the values for `maxDepth` and `subsamplingRate`
-# from the underlying Java object.
-
 # Plot the feature importances:
 def plot_feature_importances(fi):
   fi_array = fi.toArray()
@@ -185,11 +182,6 @@ pipeline_model_loaded = PipelineModel.read().load(S3_HOME + "/models/pipeline_mo
 #```python
 #pipeline_model_loaded = PipelineModel.load(S3_HOME + "/models/pipeline_model")
 #```
-
-# Save the underlying Java object to get around an issue with saving
-# `TrainValidationSplitModel()` objects:
-pipeline_model._to_java().write().overwrite().save(S3_HOME + "/models/pipeline_model")
-
 
 # ## Apply the pipeline model
 
