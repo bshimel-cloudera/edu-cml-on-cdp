@@ -151,7 +151,7 @@ indexed = indexer_model.transform(engineered1)
 indexed.select("vehicle_color", "vehicle_color_indexed").show(5)
 
 # Then we use
-# [OneHotEncoder](http://spark.apache.org/docs/latest/api/python/pyspark.ml.html#pyspark.ml.feature.OneHotEncoder)
+# [OneHotEncoderEstimator](https://spark.apache.org/docs/2.4.8/api/python/pyspark.ml.html?highlight=onehotencoderestimator#pyspark.ml.feature.OneHotEncoderEstimator)
 # to generate a set of dummy variables:
 from pyspark.ml.feature import OneHotEncoderEstimator
 encoder = OneHotEncoderEstimator(inputCols=["vehicle_color_indexed"], outputCols=["vehicle_color_encoded"])
@@ -177,7 +177,7 @@ assembled.head(5)
 # **Note:** `features` is stored as a `SparseVector`.
 
 # Save data for subsequent modules:
-assembled.write.parquet(S3_ROOT + "/data/modeling_data", mode="overwrite")
+assembled.write.parquet(S3_HOME + "/data/modeling_data", mode="overwrite")
 
 # **Note:** We are saving the data to our user directory in HDFS.
 
